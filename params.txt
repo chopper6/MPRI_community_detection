@@ -1,0 +1,30 @@
+PARAM_NAME	VALUE	DTYPE	(COMMENTS)
+
+debug	False	bool
+output_path	./output	str
+verbose	True	bool
+timeit	True	bool
+iters	2000	int
+ 
+run	GLOBAL	str
+ 
+build	human-ppi	str	(others: ring2way,twoT,sep_cliques,encode,human-ppi [BCL11A])
+seeds	[REL]	listStr	(only if seed_set==picked, set of seed nodes, CHANGE DTYPE TO listStr AS NEEDED)
+use_pagerank	False	bool
+draw_pagerank	False	bool
+
+num_communities	2000	int
+global_seed	True	bool
+ 
+community_size	16	int
+dR	True	bool	(if dR<0, search ends)
+ 
+damping	.1	float	(in [0,1])
+ 
+seed_set	picked	str	(other choice: random)
+num_seeds	2	int	(only if seed_set==random)
+num_nodes	200	int	(only valid for a few models, ex scale-free)
+self-loops	False	bool
+ 
+draw_layout	spring	str	(based on networkx avail layouts, ex. spring, kamada_kawai)
+save_fig	true	bool
