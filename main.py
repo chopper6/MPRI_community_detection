@@ -1,9 +1,6 @@
 import init, page_rank,plot,local_community, global_community
 import numpy as np, networkx as nx
 
-# for the lazy: cd Google*/*M2/*S2/Gra*/gra*/
-
-
 def main():
 	param_file = './params.txt'
 	params = init.params(param_file)
@@ -67,13 +64,6 @@ def all(params):
 	#plot.drawG_by_rank(G,params,top_k_nodes)
 	print('\nPagerank topk = ', top_k_nodes)
 
-	if False:
-		print("\n\nRUNNING LOCAL COMMUNITY\n")
-		params['use_pagerank']= True
-		C_local2, Dendo_local2 = local_C(params,plot_results=True,G=G)
-		print('\n\nDendo Local = ', Dendo_local2)
-
-		locals_shared = []
 	local_pr_shared = []
 	for c in C_local:
 		#if c in C_local2:
@@ -94,8 +84,6 @@ def all(params):
 	for c in C_global:
 		if c in C_local:
 			global_local_shared += [c]
-		#if c in locals_shared:
-		#	all_shared += [c]
 		if c in top_k_nodes:
 			global_PR_shared += [c]
 
@@ -103,11 +91,9 @@ def all(params):
 	print("Dendo global:",Dendo_global)
 	H = G.subgraph(global_local_shared)
 	plot.drawG_by_dendos(H,Dendo_local, Dendo_global[seed], params)
-	#print("\nlocals shared:",locals_shared)
 	print('\npr local shared:',local_pr_shared)
 	print("\nglobal and local shared:",global_local_shared)
 	print('\nglobal PR shared:',global_PR_shared)
-	#print('\nall shared:',all_shared)
 
 
 

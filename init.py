@@ -90,8 +90,6 @@ def build_global(params):
 		return prep_global(params,G)
 
 	# REAL DATA	
-	elif params['build'] == 'encode':
-		return import_and_prep_global(params,'./input/Human-ENCODE-K562.txt')
 	elif params['build'] == 'bacteria-ppi':
 		return import_and_prep_global(params,'./input/Bacteria-PPI.txt')
 	elif params['build'] == 'bacteria-reg':
@@ -117,8 +115,6 @@ def build(params):
 		G= two_triangles(params)
 	elif params['build'] == 'sep_cliques':
 		G= sep_cliques(params)
-	elif params['build'] == 'encode':
-		G = import_net(params,'./input/Human-ENCODE-GM.txt')
 		print("|V| ",str(len(G.nodes())),", |E|",str(len(G.edges())))
 	elif params['build'] == 'human-ppi':
 		G = import_net(params,'./input/Human-PPI.txt')
@@ -161,8 +157,6 @@ def rm_self_loops(G):
 def import_net(params,filename):
 
 	G = nx.empty_graph(create_using=nx.DiGraph())
-	# the ENCODE files have been pre-filtered to include only the largest CC (typically ~95% of the genes)
-	# edge sign is there but excluded here
 
 	with open(filename) as f:
 		lines = f.readlines()

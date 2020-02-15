@@ -61,13 +61,6 @@ def clauset(params):
 
 		j = dict_argmax(dQ, i)
 
-		# mess of prev attempts:
-		#j = dQ[i].argmax()
-		#j = np.array([dQ[i,k] for k in range(num_nodes)]).argmax()
-		#j = np.array([dQ[i][k] for k in dQ[i].keys()]).argmax()
-
-		#if params['debug']:
-		#	print('\nvals at the max:',dQ[i,j],dQ[j,i])
 		
 		if params['timeit']:
 			t0 = time.time()

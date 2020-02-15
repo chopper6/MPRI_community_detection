@@ -3,7 +3,7 @@ PARAM_NAME	VALUE	DTYPE	(COMMENTS)
 debug	False	bool
 output_path	./output	str
 verbose	True	bool
-timeit	True	bool
+timeit	False	bool
 iters	2000	int
  
 run	GLOBAL	str	(GLOBAL, LOCAL, BOTH, ALL)
@@ -16,7 +16,7 @@ draw_pagerank	False	bool
 num_communities	500	int
 global_seed	True	bool
  
-community_size	16	int
+community_size	40	int
 dR	True	bool	(if dR<0, search ends)
  
 damping	.1	float	(in [0,1])
@@ -27,4 +27,4 @@ num_nodes	200	int	(only valid for a few models, ex scale-free)
 self-loops	False	bool
  
 draw_layout	spring	str	(based on networkx avail layouts, ex. spring, kamada_kawai)
-save_fig	true	bool
+save_fig	false	bool
