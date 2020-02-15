@@ -6,14 +6,14 @@ verbose	True	bool
 timeit	True	bool
 iters	2000	int
  
-run	GLOBAL	str
+run	GLOBAL	str	(GLOBAL, LOCAL, BOTH, ALL)
  
 build	human-ppi	str	(others: ring2way,twoT,sep_cliques,encode,human-ppi [BCL11A])
 seeds	[REL]	listStr	(only if seed_set==picked, set of seed nodes, CHANGE DTYPE TO listStr AS NEEDED)
 use_pagerank	False	bool
 draw_pagerank	False	bool
 
-num_communities	2000	int
+num_communities	500	int
 global_seed	True	bool
  
 community_size	16	int

@@ -92,7 +92,7 @@ def drawG_by_comm_global(G,node_C,params):
 
 	plt.figure(figsize=(10,6))
 	plt.title('Global Community Detection',fontsize=26)
-	node_size, nalpha, ealpha = 40, .3, .1
+	node_size, nalpha, ealpha = 40, .4, .1
 	
 	pos = get_layout(params,G)
 
